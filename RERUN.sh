@@ -13,8 +13,11 @@ openssl req -new -newkey RSA -nodes -keyout server.key -out server.csr -batch \
 
 # sign server CSR with CA key
 openssl x509 -req -days 10 -in server.csr -CAkey CA.key -CA CA.pem -CAcreateserial \
-	-out server.pem
+	-out server.pem -extfile extfile.txt
 echo "certificates created"
+
+# check the subject in the signed server certificate
+echo "Subject field in server.pem:" $(openssl x509 -in server.pem -noout -text | grep "Subject:")
 
 # run server
 python server.py &
