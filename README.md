@@ -13,4 +13,4 @@
     6.  Run Python client using `requests`
     7.  Report success or failure
 
-Please add comments to <https://github.com/gvwilson/thirdbit/issues/130> to help debug.
+Please add comments to <https://github.com/gvwilson/sys-tutorial/issues/7> to help debug.
